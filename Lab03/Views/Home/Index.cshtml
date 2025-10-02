@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "my_layout";
+    ViewData["Title"] = "Home Page";
+}
+<partial name="Banner" />
+<hr />
+
+<button id="loadAjax" class="btn btn btn-primary">Click to load book from partialResult </button>
+<hr />
+
+<div id="data-from-ajax" class="row">Loading row...</div>
+
+@await Component.InvokeAsync("Book")
+@section Scripts {
+    <script>
+        $("#loadAjax").click(function() {
+            $("#data-from-ajax").load('/Book/PopularBook')
+        })
+    </script>
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

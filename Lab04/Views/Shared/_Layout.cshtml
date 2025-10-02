@@ -1,0 +1,37 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AdminLTE</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/admin-lte/dist/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/admin-lte/dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="~/lib/admin-lte/dist/assets/img/" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css" />
+
+    
+  
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary app-loaded sidebar-collapse">
+    <div class="app-wrapper">
+        <partial name="_Navbar" />
+        <partial name="_Sidebar" />
+        <div class="app-main-wrapper">
+            
+            @RenderBody()
+        <partial name="_Footer" />
+        </div>
+    </div>
+    
+    <!-- JS -->
+    <script src="~/lib/admin-lte/dist/js/jquery.min.js"></script>
+    <script src="~/lib/admin-lte/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/admin-lte/dist/js/adminlte.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
