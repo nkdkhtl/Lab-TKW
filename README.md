@@ -1,10 +1,10 @@
 # Lab-TKW
 
-Đây là kho mã tổng hợp các bài làm Lab của tôi trong môn Thiết Kế Web.
+Đây là kho mã tổng hợp các bài làm Lab của namkhuc trong môn Thiết Kế Web.
 
 ## Giới thiệu
 
-Repo này tổng hợp toàn bộ các bài thực hành, bài tập Lab mà tôi đã thực hiện trong quá trình học môn Thiết Kế Web. Mỗi thư mục tương ứng với một buổi Lab hoặc một bài tập cụ thể.
+Repo này tổng hợp toàn bộ các bài thực hành, bài tập Lab mà namkhuc đã thực hiện trong quá trình học môn Thiết Kế Web. Mỗi thư mục tương ứng với một buổi Lab hoặc một bài tập cụ thể.
 
 ## Cấu trúc thư mục
 
