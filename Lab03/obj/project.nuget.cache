@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pJEM/qwuojc=",
+  "dgSpecHash": "3Ctv7XM8yIg=",
   "success": true,
-  "projectFilePath": "E:\\c#project\\LTW\\ThucHanh02\\Lab02\\Lab02.csproj",
+  "projectFilePath": "E:\\c#project\\LTW\\Lab\\Lab03\\Lab02.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ideapad SLIM 5 Pro\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Ideapad SLIM 5 Pro\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
