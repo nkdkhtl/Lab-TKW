@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kE43YyB3yzo=",
+  "dgSpecHash": "8V8PS0Ctj48=",
   "success": true,
-  "projectFilePath": "E:\\c#project\\LTW\\NetCoreLAB6_EF\\Lab08.csproj",
+  "projectFilePath": "E:\\c#project\\LTW\\Lab\\Lab08\\NetCoreLAB6_EF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ideapad SLIM 5 Pro\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Ideapad SLIM 5 Pro\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
