@@ -1,0 +1,37 @@
+@model DatabaseFirst.Models.SanPham
+@{
+    ViewData["Title"] = "Create SanPham";
+}
+<h1>Create SanPham</h1>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="MaSanPham" class="form-label"></label>
+        <input asp-for="MaSanPham" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TenSanPham" class="form-label"></label>
+        <input asp-for="TenSanPham" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="HinhAnh" class="form-label"></label>
+        <input asp-for="HinhAnh" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="SoLuong" class="form-label"></label>
+        <input asp-for="SoLuong" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DonGia" class="form-label"></label>
+        <input asp-for="DonGia" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="MaLoai" class="form-label"></label>
+        <select asp-for="MaLoai" class="form-select" asp-items="ViewBag.MaLoai"></select>
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="TrangThai" class="form-check-input" />
+        <label asp-for="TrangThai" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,21 @@
+@model DatabaseFirst.Models.LoaiSanPham
+@{
+    ViewData["Title"] = "Create LoaiSanPham";
+}
+<h1>Create LoaiSanPham</h1>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="MaLoai" class="form-label"></label>
+        <input asp-for="MaLoai" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TenLoai" class="form-label"></label>
+        <input asp-for="TenLoai" class="form-control" />
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="TrangThai" class="form-check-input" />
+        <label asp-for="TrangThai" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

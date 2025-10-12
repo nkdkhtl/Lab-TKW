@@ -1,8 +1,14 @@
+using CodeFirst.Classes;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();               // keep Razor Pages
+builder.Services.AddControllersWithViews();     // enable MVC controllers + views
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnection")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

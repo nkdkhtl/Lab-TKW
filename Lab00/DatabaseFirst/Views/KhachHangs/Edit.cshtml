@@ -1,0 +1,42 @@
+@model DatabaseFirst.Models.KhachHang
+@{
+    ViewData["Title"] = "Edit KhachHang";
+}
+<h1>Edit KhachHang</h1>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="MaKhachHang" class="form-label"></label>
+        <input asp-for="MaKhachHang" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="HoTenKhachHang" class="form-label"></label>
+        <input asp-for="HoTenKhachHang" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="MatKhau" class="form-label"></label>
+        <input asp-for="MatKhau" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DienThoai" class="form-label"></label>
+        <input asp-for="DienThoai" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DiaChi" class="form-label"></label>
+        <input asp-for="DiaChi" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="NgayDangKy" class="form-label"></label>
+        <input asp-for="NgayDangKy" class="form-control" />
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="TrangThai" class="form-check-input" />
+        <label asp-for="TrangThai" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

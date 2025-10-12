@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CodeFirst.Models.KhachHang>
+
+@{
+    ViewData["Title"] = "Khách hàng";
+}
+
+<h1>Khách hàng</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First()!.MaKhachHang)</th>
+            <th>@Html.DisplayNameFor(m => m.First()!.HoTenKhachHang)</th>
+            <th>@Html.DisplayNameFor(m => m.First()!.Email)</th>
+            <th>@Html.DisplayNameFor(m => m.First()!.DienThoai)</th>
+            <th>@Html.DisplayNameFor(m => m.First()!.TrangThai)</th>
+            <th style="width:220px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@Html.DisplayFor(_ => item.MaKhachHang)</td>
+            <td>@Html.DisplayFor(_ => item.HoTenKhachHang)</td>
+            <td>@Html.DisplayFor(_ => item.Email)</td>
+            <td>@Html.DisplayFor(_ => item.DienThoai)</td>
+            <td>@Html.DisplayFor(_ => item.TrangThai)</td>
+            <td class="text-end">
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-sm btn-info">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

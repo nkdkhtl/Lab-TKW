@@ -1,0 +1,30 @@
+@model DatabaseFirst.Models.CtHoaDon
+@{
+    ViewData["Title"] = "Edit CT Hoa Don";
+}
+<h1>Edit CT Hoa Don</h1>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label class="form-label">Hoa Don</label>
+        <select asp-for="HoaDonId" class="form-select" asp-items="ViewBag.HoaDonId"></select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">San Pham</label>
+        <select asp-for="SanPhamId" class="form-select" asp-items="ViewBag.SanPhamId"></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="SoLuongMua" class="form-label"></label>
+        <input asp-for="SoLuongMua" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DonGiaMua" class="form-label"></label>
+        <input asp-for="DonGiaMua" class="form-control" />
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="TrangThai" class="form-check-input" />
+        <label asp-for="TrangThai" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

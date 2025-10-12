@@ -1,0 +1,37 @@
+@model IEnumerable<DatabaseFirst.Models.CtHoaDon>
+@{
+    ViewData["Title"] = "CT Hoa Don";
+}
+<h1>CT Hoa Don</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>HoaDon</th>
+            <th>SanPham</th>
+            <th>SoLuongMua</th>
+            <th>DonGiaMua</th>
+            <th>ThanhTien</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HoaDon?.MaHoaDon</td>
+            <td>@item.SanPham?.TenSanPham</td>
+            <td>@item.SoLuongMua</td>
+            <td>@item.DonGiaMua</td>
+            <td>@item.ThanhTien</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

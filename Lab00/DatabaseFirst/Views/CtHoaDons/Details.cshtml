@@ -1,0 +1,23 @@
+@model DatabaseFirst.Models.CtHoaDon
+@{
+    ViewData["Title"] = "CT Hoa Don Details";
+}
+<h1>CT Hoa Don Details</h1>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Hoa Don</dt>
+        <dd class="col-sm-10">@Model.HoaDon?.MaHoaDon</dd>
+        <dt class="col-sm-2">San Pham</dt>
+        <dd class="col-sm-10">@Model.SanPham?.TenSanPham</dd>
+        <dt class="col-sm-2">SoLuongMua</dt>
+        <dd class="col-sm-10">@Model.SoLuongMua</dd>
+        <dt class="col-sm-2">DonGiaMua</dt>
+        <dd class="col-sm-10">@Model.DonGiaMua</dd>
+        <dt class="col-sm-2">ThanhTien</dt>
+        <dd class="col-sm-10">@Model.ThanhTien</dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</p>

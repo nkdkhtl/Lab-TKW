@@ -2,6 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Register DbContext (OnConfiguring in the context sets the provider/connection string)
+builder.Services.AddDbContext<DatabaseFirst.Models.QlbanHangLtwDfContext>();
 
 var app = builder.Build();
 

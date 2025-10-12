@@ -1,0 +1,49 @@
+@model DatabaseFirst.Models.HoaDon
+@{
+    ViewData["Title"] = "Create HoaDon";
+}
+<h1>Create HoaDon</h1>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="MaHoaDon" class="form-label"></label>
+        <input asp-for="MaHoaDon" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="MaKhachHang" class="form-label"></label>
+        <select asp-for="MaKhachHang" class="form-select" asp-items="ViewBag.MaKhachHang"></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NgayHoaDon" class="form-label"></label>
+        <input asp-for="NgayHoaDon" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="NgayNhan" class="form-label"></label>
+        <input asp-for="NgayNhan" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="HoTenKhachHang" class="form-label"></label>
+        <input asp-for="HoTenKhachHang" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DienThoai" class="form-label"></label>
+        <input asp-for="DienThoai" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DiaChi" class="form-label"></label>
+        <input asp-for="DiaChi" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TongTriGia" class="form-label"></label>
+        <input asp-for="TongTriGia" class="form-control" />
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="TrangThai" class="form-check-input" />
+        <label asp-for="TrangThai" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
