@@ -1,0 +1,72 @@
+# ===========================
+# Visual Studio
+# ===========================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ===========================
+# Build folders
+# ===========================
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# ===========================
+# Visual Studio Code
+# ===========================
+.vscode/
+
+# ===========================
+# Generated files
+# ===========================
+*.log
+*.tlog
+*.vsidx
+*.pdb
+*.cache
+*.dbmdl
+*.opendb
+*.ide
+*.idb
+
+# ===========================
+# Database related (Entity Framework / LocalDB)
+# ===========================
+*.mdf
+*.ldf
+
+# ===========================
+# Temporary / backup files
+# ===========================
+*.tmp
+*.bak
+*.swp
+*.swo
+*.userprefs
+
+# ===========================
+# Publish and package
+# ===========================
+*.publish.xml
+*.pubxml
+*.pubxml.user
+*.publishproj
+*.zip
+*.tar.gz
+*.nupkg
+*.snupkg
+
+# ===========================
+# Others
+# ===========================
+node_modules/
+dist/
+.env
