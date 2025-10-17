@@ -1,0 +1,43 @@
+﻿@model IEnumerable<InClass08.Models.TvcLoaiSanPham>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Categories</h2>
+        <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-lg me-1"></i> Create New</a>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.tvcMaLoai)</th>
+                            <th>@Html.DisplayNameFor(model => model.tvcTenLoai)</th>
+                            <th>@Html.DisplayNameFor(model => model.tvcTrangThai)</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    @foreach (var item in Model) {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.tvcMaLoai)</td>
+                                <td>@Html.DisplayFor(modelItem => item.tvcTenLoai)</td>
+                                <td>@Html.DisplayFor(modelItem => item.tvcTrangThai)</td>
+                                <td class="text-end">
+                                    <a asp-action="Edit" asp-route-id="@item.tvcId" class="btn btn-sm btn-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a asp-action="Details" asp-route-id="@item.tvcId" class="btn btn-sm btn-info text-white me-1"><i class="bi bi-eye-fill"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.tvcId" class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
