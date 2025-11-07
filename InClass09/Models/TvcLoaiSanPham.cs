@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,6 +7,8 @@ namespace InClass08.Models
 {
     [Table("tvcLoaiSanPham")]
     [Index(nameof(tvcMaLoai),IsUnique = true)]
+    [ValidateNever]
+
     public class TvcLoaiSanPham
     {
         [Key]
@@ -23,6 +26,7 @@ namespace InClass08.Models
         [Display(Name = "Trạng thái")]
         public bool tvcTrangThai { get; set; }
 
+        [ValidateNever]
         public ICollection<TvcSanPham> TvcSanPham { get; set; }
     }
 }
