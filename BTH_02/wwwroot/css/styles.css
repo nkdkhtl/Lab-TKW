@@ -1,0 +1,104 @@
+﻿body {
+}
+
+:root{
+  --left-width: 250px;
+  --left-collapsed-width: 64px;
+  --topnav-height: 56px;
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b5fff;
+}
+
+html,body { height:100%; margin:0; font-family:Segoe UI, Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111827; }
+
+.topnav {
+  position:fixed;
+  top:0; left:0; right:0;
+  height:var(--topnav-height);
+  background:#fff;
+  border-bottom:1px solid #e6e6e6;
+  display:flex;
+  align-items:center;
+  z-index:50;
+}
+.topnav-inner {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 12px;
+}
+.brand { font-weight:600; color:var(--accent); text-decoration:none; font-size:1rem; }
+.topnav-actions { margin-left:auto; display:flex; gap:8px; align-items:center; }
+.action { color:var(--muted); text-decoration:none; font-size:0.95rem; }
+
+.menu-toggle {
+  display:inline-grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:6px;
+  border:0;
+  background:transparent;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.app-shell {
+  display:flex;
+  gap:0;
+  margin-top:var(--topnav-height);
+  min-height: calc(100vh - var(--topnav-height));
+}
+
+.leftmenu {
+  width:var(--left-width);
+  background:#0f1724;
+  color:#fff;
+  padding-top:12px;
+  box-sizing:border-box;
+  transition:width 200ms ease;
+  overflow:hidden;
+  height: calc(100vh - var(--topnav-height));
+}
+.leftmenu .menu-list { list-style:none; margin:8px 0; padding:0; }
+.leftmenu .menu-item { padding:8px 12px; }
+.leftmenu .menu-item a {
+  color:#e6eef9;
+  text-decoration:none;
+  display:block;
+  padding:10px 8px;
+  border-radius:6px;
+}
+.leftmenu .menu-item a:hover { background:rgba(255,255,255,0.04); color:#fff; }
+
+.leftmenu.collapsed { width:var(--left-collapsed-width); }
+.leftmenu.collapsed .menu-item a { text-align:center; padding-left:0; padding-right:0; }
+
+.main {
+  flex:1;
+  padding:20px;
+  box-sizing:border-box;
+  min-height: calc(100vh - var(--topnav-height));
+  background: #f8fafc;
+}
+
+@media (max-width: 800px) {
+  .leftmenu {
+    position:fixed;
+    left:-320px;
+    top:var(--topnav-height);
+    height:calc(100vh - var(--topnav-height));
+    width:260px;
+    box-shadow:0 8px 24px rgba(2,6,23,0.2);
+    transition:left 220ms ease;
+    z-index:60;
+  }
+  .leftmenu.open { left:0; }
+  .leftmenu.collapsed { width:260px; }
+  .app-shell { margin-left:0; }
+  body.leftmenu-open-scroll-lock { overflow:hidden; } 
+}

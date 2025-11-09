@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using BTH_01.Models;
+using BTH_02.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BTH_02.Controllers
