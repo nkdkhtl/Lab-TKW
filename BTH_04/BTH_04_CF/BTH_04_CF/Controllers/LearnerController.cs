@@ -1,0 +1,163 @@
+using System;
+using BTH_04.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+
+namespace BTH_04.Controllers
+{
+    public class LearnerController : Controller
+    {
+        private SchoolContext db;
+
+        public LearnerController(SchoolContext context)
+        {
+            db = context;
+        }
+
+        public IActionResult Index()
+        {
+            var learners = db.Learners.Include(m => m.Major).ToList();
+            return View(learners);
+        }
+
+        public IActionResult Create()
+        {
+            ViewBag.Majors = new SelectList(db.Majors, "MajorID", "MajorName");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Learner learner)
+        {
+            ModelState.Remove("Major");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Learners.Add(learner);
+                    db.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Lỗi khi lưu dữ liệu: " + ex.Message);
+                }
+            }
+            ViewBag.Majors = new SelectList(db.Majors, "MajorID", "MajorName", learner?.MajorID);
+            return View(learner);
+        }
+
+        // GET: Learner/Edit/5
+        public IActionResult Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var learner = db.Learners.Find(id);
+            if (learner == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Majors = new SelectList(db.Majors, "MajorID", "MajorName", learner.MajorID);
+            return View(learner);
+        }
+
+        // POST: Learner/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(string id, Learner learner)
+        {
+            if (id != learner.LearnerId)
+            {
+                return NotFound();
+            }
+
+            ModelState.Remove("Major");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Update(learner);
+                    db.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!LearnerExists(learner.LearnerId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Lỗi khi cập nhật dữ liệu: " + ex.Message);
+                }
+            }
+            ViewBag.Majors = new SelectList(db.Majors, "MajorID", "MajorName", learner?.MajorID);
+            return View(learner);
+        }
+
+        // GET: Learner/Delete/5
+        public IActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var learner = db.Learners
+                .Include(m => m.Major)
+                .FirstOrDefault(m => m.LearnerId == id);
+
+            if (learner == null)
+            {
+                return NotFound();
+            }
+
+            return View(learner);
+        }
+
+        // POST: Learner/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(string id)
+        {
+            var learner = db.Learners
+                .Include(m => m.Major)
+                .FirstOrDefault(m => m.LearnerId == id);
+
+            if (learner == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                db.Learners.Remove(learner);
+                db.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Lỗi khi xóa dữ liệu: " + ex.Message);
+                return View(learner);
+            }
+        }
+
+        private bool LearnerExists(string id)
+        {
+            return db.Learners.Any(e => e.LearnerId == id);
+        }
+    }
+}
