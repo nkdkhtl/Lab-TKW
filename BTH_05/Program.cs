@@ -1,7 +1,13 @@
+using BTH_05.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<SchoolContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolContext")));
 
 var app = builder.Build();
 
