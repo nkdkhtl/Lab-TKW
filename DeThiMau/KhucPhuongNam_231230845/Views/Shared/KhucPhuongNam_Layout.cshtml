@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KhucPhuongNam_231230845</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KhucPhuongNam_231230845.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Content/css/easy-responsive-tabs.css">
+    <link rel="stylesheet" href="~/Content/css/global.css">
+    <link rel="stylesheet" href="~/Content/css/slider.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+
+</head>
+<body>
+    <!-- Begin Wrap -->
+<div class="wrap">
+        @await Html.PartialAsync("MyLayout/KhucPhuongNam_Header")
+        @RenderBody()
+        @await Html.PartialAsync("MyLayout/KhucPhuongNam_Footer")
+</div>
+<!-- End Wrap -->
+    <script src="~/Script/jquery-1.7.2.min.js"></script>
+    <script src="~/Script/KpnScript.js"></script>
+    <script src="~/Script/easing.js"></script>
+    <script src="~/Script/easyResponsiveTabs.js"></script>
+    <script src="~/Script/jquery.accordion.js"></script>
+    <script src="~/Script/jquery.easing.js"></script>
+    <script src="~/Script/move-top.js"></script>
+    <script src="~/Script/script.js"></script>
+    <script src="~/Script/slides.min.jquery.js"></script>
+    <script src="~/Script/startstop-slider.js"></script>
+    
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
